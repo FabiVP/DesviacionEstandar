@@ -39,3 +39,8 @@ class TestDesviacionEstandar_Prom(unittest.TestCase):
     def test_unElemento_desviacionCero(self):
         elementos = DesviacionEstandar_Prom([15])
         self.assertEqual(0, elementos.calcular())
+
+    def test_dosElementos_desviacion(self):
+        elementos = DesviacionEstandar_Prom([15, 17])
+        # cálculo manual: sqrt(((15-16)^2 + (17-16)^2) / 2) = sqrt(1) = 1
+        self.assertEqual(1, elementos.calcular())
