@@ -21,3 +21,7 @@ class TestDesviacionEstandar_Prom(unittest.TestCase):
     def test_nElementosTodosCeros(self):
         elementos = DesviacionEstandar_Prom([0, 0, 0, 0])
         self.assertEqual(0, elementos.promedio())
+
+    def test_nElementosPositivosYNegativos(self):
+        elementos = DesviacionEstandar_Prom([10, -10, 20, -20])
+        self.assertEqual((10 + (-10) + 20 + (-20)) / 4, elementos.promedio())
