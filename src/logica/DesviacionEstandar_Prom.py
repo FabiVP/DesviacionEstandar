@@ -11,12 +11,14 @@ class DesviacionEstandar_Prom:
             return None
 
     def calcular(self):
-        if len(self.__numeros) > 1:
+        if len(self.__numeros) == 0:
+            return None
+        elif len(self.__numeros) == 1:
+            return 0
+        else:
             media = sum(self.__numeros) / len(self.__numeros)
             varianza = sum((x - media) ** 2 for x in self.__numeros) / len(self.__numeros)
             return math.sqrt(varianza)
-        else:
-            return None
 
 
 

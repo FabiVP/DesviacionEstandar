@@ -35,3 +35,7 @@ class TestDesviacionEstandar_Prom(unittest.TestCase):
     def test_sin_elementos_desviacion(self):
         elementos = DesviacionEstandar_Prom([])
         self.assertIsNone(elementos.calcular())
+
+    def test_unElemento_desviacionCero(self):
+        elementos = DesviacionEstandar_Prom([15])
+        self.assertEqual(0, elementos.calcular())
