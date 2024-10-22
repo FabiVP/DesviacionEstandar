@@ -1,3 +1,4 @@
+import math
 import unittest
 from src.logica.DesviacionEstandar_Prom import DesviacionEstandar_Prom
 
@@ -44,3 +45,11 @@ class TestDesviacionEstandar_Prom(unittest.TestCase):
         elementos = DesviacionEstandar_Prom([15, 17])
         # cálculo manual: sqrt(((15-16)^2 + (17-16)^2) / 2) = sqrt(1) = 1
         self.assertEqual(1, elementos.calcular())
+
+    def test_nElementosPositivos_desviacion(self):
+        elementos = DesviacionEstandar_Prom([12, 14, 18, 19, 10, 15])
+        # cálculo manual
+        media = (12 + 14 + 18 + 19 + 10 + 15) / 6
+        varianza = sum((x - media) ** 2 for x in [12, 14, 18, 19, 10, 15]) / 6
+        desviacion = math.sqrt(varianza)
+        self.assertAlmostEqual(desviacion, elementos.calcular())
