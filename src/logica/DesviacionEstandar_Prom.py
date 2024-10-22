@@ -5,6 +5,8 @@ class DesviacionEstandar_Prom:
         self.__numeros = numeros
 
     def promedio(self):
+        if len(self.__numeros) == 0:
+            return "No Se Puede Calcular"
         if len(self.__numeros) > 0:
             return sum(self.__numeros) / len(self.__numeros)
         else:
@@ -12,7 +14,7 @@ class DesviacionEstandar_Prom:
 
     def calcular(self):
         if len(self.__numeros) == 0:
-            return None
+            return "No Se Puede Calcular"
         elif len(self.__numeros) == 1:
             return 0
         else:

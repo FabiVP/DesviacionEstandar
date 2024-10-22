@@ -5,7 +5,7 @@ from src.logica.DesviacionEstandar_Prom import DesviacionEstandar_Prom
 class TestDesviacionEstandar_Prom(unittest.TestCase):
     def test_sin_elementos(self):
         elementos = DesviacionEstandar_Prom([])
-        self.assertIsNone(elementos.promedio())
+        self.assertEqual("No Se Puede Calcular",elementos.calcular())
 
     def test_unElemento_retornaValorUnicoElemento(self):
         elementos = DesviacionEstandar_Prom([15])
@@ -35,7 +35,7 @@ class TestDesviacionEstandar_Prom(unittest.TestCase):
 # Desvicion estandar
     def test_sin_elementos_desviacion(self):
         elementos = DesviacionEstandar_Prom([])
-        self.assertIsNone(elementos.calcular())
+        self.assertEqual("No Se Puede Calcular",elementos.calcular())
 
     def test_unElemento_desviacionCero(self):
         elementos = DesviacionEstandar_Prom([15])
