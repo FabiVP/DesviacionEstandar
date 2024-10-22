@@ -65,3 +65,8 @@ class TestDesviacionEstandar_Prom(unittest.TestCase):
         varianza = sum((x - media) ** 2 for x in [10, -10, 20, -20]) / 4
         desviacion = math.sqrt(varianza)
         self.assertAlmostEqual(desviacion, elementos.calcular())
+
+    def test_elementosNoNumericos_lanzaTypeError(self):
+        with self.assertRaises(TypeError):
+            elementos = DesviacionEstandar_Prom([10, "no_numero", 20])
+            elementos.calcular()
