@@ -30,3 +30,8 @@ class TestDesviacionEstandar_Prom(unittest.TestCase):
         with self.assertRaises(TypeError):
             elementos = DesviacionEstandar_Prom([10, "no_numero", 20])
             elementos.promedio()
+
+# Desvicion estandar
+    def test_sin_elementos_desviacion(self):
+        elementos = DesviacionEstandar_Prom([])
+        self.assertIsNone(elementos.calcular())
