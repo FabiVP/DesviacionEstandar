@@ -6,5 +6,7 @@ class TestDesviacionEstandar_Prom(unittest.TestCase):
         elementos = DesviacionEstandar_Prom([])
         self.assertIsNone(elementos.promedio())
 
-
+    def test_unElemento_retornaValorUnicoElemento(self):
+        elementos = DesviacionEstandar_Prom([15])
+        self.assertEqual(15, elementos.promedio())
 
