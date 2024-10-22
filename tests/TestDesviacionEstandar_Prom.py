@@ -17,3 +17,7 @@ class TestDesviacionEstandar_Prom(unittest.TestCase):
     def test_nElementos_retornaPromedioNElementos(self):
         elementos = DesviacionEstandar_Prom([12, 14, 18, 19, 10, 15])
         self.assertEqual((12 + 14 + 18 + 19 + 10 + 15) / 6, elementos.promedio())
+
+    def test_nElementosTodosCeros(self):
+        elementos = DesviacionEstandar_Prom([0, 0, 0, 0])
+        self.assertEqual(0, elementos.promedio())
